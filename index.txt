@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang 3</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        h1 {
+            color: deeppink; /* Màu hồng đậm */
+            font-size: 24px; /* Cỡ chữ trung bình */
+        }
+        .date-input, .submit-button {
+            background-color: white;
+            border: 2px solid deeppink; /* Màu hồng đậm */
+            color: deeppink; /* Màu hồng đậm */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+            border-radius: 12px; /* Góc bo tròn */
+        }
+        .submit-button:hover {
+            background-color: deeppink; /* Màu hồng đậm */
+            color: white;
+        }
+        .date-input {
+            cursor: pointer;
+        }
+        .footer-image {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script>
+        function saveDateToLocalStorage() {
+            var date = document.getElementById('datePicker').value;
+            if (date) {
+                localStorage.setItem('selectedDate', date);
+                window.location.href = "page4.html"; // Chuyển đến trang 4
+            } else {
+                alert("Vui lòng chọn ngày trước khi gửi!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Chọn ngày đi em iuuuu</h1>
+    <input type="date" id="datePicker" class="date-input">
+    <button class="submit-button" onclick="saveDateToLocalStorage()">Gửi</button>
+
+    <!-- Ảnh Getout.jpg -->
+    <img src="Getout.jpg" alt="Get Out" class="footer-image">
+</body>
+</html>
